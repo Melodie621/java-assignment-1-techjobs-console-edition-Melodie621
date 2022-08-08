@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -60,7 +57,6 @@ public class TechJobs {
                 // What is their search term?
                 System.out.println("\nSearch term:");
                 String searchTerm = in.nextLine();
-
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
                 } else {
@@ -119,7 +115,35 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+      if(someJobs.size()>0) {
+          for (HashMap<String, String> job : someJobs) {
+//              Set<String> keys=job.keySet();
+              System.out.println("\n*****");
+              System.out.println("position type: " + job.get("position type"));
+              System.out.println("name: " + job.get("name"));
+              System.out.println("employer: " + job.get("employer"));
+              System.out.println("location: " + job.get("location"));
+              System.out.println("core competency: " + job.get("core competency"));
+//              keys.remove("position type");
+//              keys.remove("name");
+//              keys.remove("employer");
+//              keys.remove("location");
+//              keys.remove("core competency");
+//                for (String key:keys)
+//                {
+//                  System.out.println(key + ": " + job.get(key));
+//                }
+              System.out.println("*****");
+          }
+        }
+        else
+        {
+        System.out.print("No Results");
+        }
 
-        System.out.println("printJobs is not implemented yet");
+
+        }
+
     }
-}
+
+//name,employer,location,position type,core competency
